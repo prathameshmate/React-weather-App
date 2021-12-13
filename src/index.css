@@ -1,0 +1,167 @@
+
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 70vh;
+    background: linear-gradient(to right, #ffffff, #bebebb);
+}
+
+/*--------------------------------------- header----------------------------------------- */
+header{
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(to top, #fff 60%, #c3f5ff 40%);
+}
+header .leftside{
+    display: flex;
+    justify-content: center;
+    width: 35%;
+}
+header .leftside .logo img{
+    margin-left: 10px;
+    width: 70px;
+    height: 62px;
+}
+header .leftside .heading{
+    padding-top: 10px;
+    text-align: center;
+    font-size: 35px;
+    font-family:cursive;
+    color: orange;
+    width: 100%;
+}
+header .rightside{
+    width: 65%;
+}
+header .rightside ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+header .rightside ul li a{
+    padding: 0 8px;
+    text-decoration: none;
+    color:  black;
+    font-size: 20px;
+    font-weight: bold;   
+    font-family: cursive; 
+}
+
+/* ------------------------------------------container----------------------------------------- */
+.container{
+    display: flex;
+    justify-content: center ;
+    margin-top: 170px;
+}
+.container >div{
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 600px;
+    height: 260px;  
+    background: linear-gradient(to right, #ffffff, #7cbbd4);
+}
+.container .inpdiv{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;  
+}
+.container .inp{
+    width: 55%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    outline: none;
+}
+.container .data{
+    padding: 10px;
+    color: black;
+}   
+.container h4{
+    color: black;
+}
+
+/* ----------------------------------------------- *foooter-----------------------------------------------------/*/
+footer{
+    border-top: 2px solid black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: cursive;
+    background: linear-gradient(to top, #c3f5ff 60%, #fff 60%);
+    color: orange;
+
+}
+
+/* ---------------------------------Responsive code ---------------------------*/
+@media screen and (max-width : 900px) {
+    
+    header .leftside .heading{
+        font-size: 27px;  
+    }
+}
+@media screen and (max-width: 720px) {
+    header .leftside .heading{
+        font-size: 24px;
+    }
+    .container > div{
+        width: 500px;
+    }
+    .container > div {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 630px) {
+    header .leftside .heading{
+        font-size: 22px;
+    }
+}
+@media screen and (max-width : 450px) {
+    header{
+        height: 105px;
+    }
+    header .leftside .heading{
+        font-size: 20px;     
+    }
+    header .rightside ul li a{
+        font-size: 18px;
+    }
+    header .leftside .logo img{
+        margin-left: 30px;
+        width: 60px;
+        height: 52px;
+    } 
+    footer{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 320px) {
+    header .rightside ul li a{
+        font-size: 16px;
+    }
+    header .leftside .logo img{
+        margin-left: 40px;   
+    }
+    .container .inp{
+        font-size: 15px;
+    }
+}
