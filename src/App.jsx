@@ -6,6 +6,7 @@ const App = () => {
 
     const [search, updateaSearch] = useState("Mumbai");
     const [data, updateData] = useState(null);
+    const [ans, updateAns] = useState(true);
 
     const searchFun = (event) => {
         updateaSearch(event.target.value);
@@ -13,17 +14,30 @@ const App = () => {
 
     useEffect(() => {
         async function fun() {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=b269eeda5293e5f924bb7ad1fb1a0bc6`);
-            const file = await response.json();
+            try{
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=b269eeda5293e5f924bb7ad1fb1a0bc6`);
+                const file = await response.json();
+    
+                updateData(file.main);  
+                updateAns(false);
 
-            updateData(file.main)
+            }
+            catch(error){
+                document.write("<h1>error while fetching Api :- " + error +"</h1>");
+            }
         }
         fun()
 
     }, [search])
+
+    if(ans){
+        return (
+            <h1>Loding....</h1>
+        );
+    }
     return (
         <>
-            
+
             <header>
                 <div className="leftside">
                     <div className='logo'>
@@ -61,7 +75,7 @@ const App = () => {
             </div>
             <footer>
                 Copyright @ 2021
-             </footer>
+            </footer>
         </>
     )
 }
